@@ -245,7 +245,7 @@ def login():
     
     if request.method =="POST" and formlog.validate_on_submit():
         ##check user
-        user=SuperUser.query.filter_by(user_name=formlog.user.data).first()
+        user=SuperUser.query.filter_by(user_name=formlog.user.data).order_by(SuperUser.id.desc()).first()
         
         if user and formlog.password.data == user.password and GROUP_NAME==user.group_name:
             login_user(user)
