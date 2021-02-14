@@ -45,4 +45,6 @@ The coding environment here in GitHub was created.
 #### Week 6 - Task 2: 
 We have uploaded files from a repository to our repository, and read a directory tree from other developers. 
 #### Week 7 - Task 3: 
-(Diary Group week 7, fill in here what we have done during the week. Follow the task 3 description
+The diary team created a shared document for design change proposals, which can be accessed and edited by following this link: https://docs.google.com/document/d/15Gy1Lkh3RP-vnlTLJ4eCP6kqifS_cOSXQxEBNxlattw/edit?usp=sharing. Everyone is encouraged to share design change ideas and pictures in the shared document. 
+
+However, the app development and methodology goups have not yet reported any progress on their tasks for week 7. 
