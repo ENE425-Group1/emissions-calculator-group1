@@ -43,7 +43,7 @@ Given the purpose of our webpage, a sustainable web design which aims to minimiz
 
 Here is an examplatory "mockup" of a possible web design for our emission app: 
 
-![Image of web design example](notes/Mockup picture.png)
+![Image of web design example](https://raw.githubusercontent.com/ENE425-Group1/emissions-calculator-group1/main/notes/Mockup%20picture.png)
 
 ## Weekly progress
 
