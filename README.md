@@ -29,13 +29,19 @@
             result.html
             select_record.html
 
-## Methodology research
+## Methodology Research
 #### This section is for research on relevant methods for calculating emissions from transportation. When adding to this section, include a short description of the methodology and referances to the source material and other relevant research (*URL links*), as shown in the example below: 
  
 #### Descriptive title (Emission factors for diesel cars), source (IEA)
 This a short description of the findings of the research, and the methodology IEA has used to calculate the emission factors. The method is based on such and such research, and uses this and that data. The methodology is further described on this page: *URL link*. 
 
-The IEA is a valid source on this issue due to some arguments. The research is similiar to several other sources on the issue, such as this research (*URL*) and this research (*URL*). On the other hand, there are also other findings with different results, such as the method used by "some statistic group" (*URL*), which gives lower emission factors. The majority of research, however, supports the described research. 
+The IEA is a valid source on this issue due to some arguments. The research is similiar to several other sources on the issue, such as this research (*URL*) and this research (*URL*). On the other hand, there are also other findings with different results, such as the method used by "some statistic group" (*URL*), which gives lower emission factors. The majority of research, however, supports the described research.
+
+#### Defining the term "Vehicle"
+To have a basic understanding it is important to have a classification of transport as urban transport or industrial transport (e.g. maritime, air). For a more segregated classification of the term "vehicle" under EC standards, this [link](https://www.eafo.eu/knowledge-center/european-vehicle-categories), connected to the last study of ["Determining the Environmental Impacts of Conventional and Alternatively Fuelled Vehicles Through LCA"](https://ec.europa.eu/clima/sites/clima/files/transport/vehicles/docs/2020_study_main_report_en.pdf) by Ricardo Energy and Environment for the European Comission. The segregation used in this study is practical for our purposes. However, a more advanced methodology is used than what is our intention with this app. 
+
+#### Conversion Factors for Greenhouse Gas Reporting
+[Here](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/891105/Conversion_Factors_2020_-_Condensed_set__for_most_users_.xlsx) are the conversion factors used by UK and international organisations to report on 2020 greenhouse gas emissions. For instance, one can find how many kilograms of CO2 emissions the different car types
 
 ## Design changes
 
