@@ -43,6 +43,7 @@ Given the purpose of our webpage, a sustainable web design which aims to minimiz
 
 Here is an examplatory "mockup" of a possible web design for our emission app: 
 
+![Image of web design example](notes/Mockup picture.png)
 
 ## Weekly progress
 
