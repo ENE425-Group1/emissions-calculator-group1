@@ -37,6 +37,12 @@ This a short description of the findings of the research, and the methodology IE
 
 The IEA is a valid source on this issue due to some arguments. The research is similiar to several other sources on the issue, such as this research (*URL*) and this research (*URL*). On the other hand, there are also other findings with different results, such as the method used by "some statistic group" (*URL*), which gives lower emission factors. The majority of research, however, supports the described research. 
 
+## Design changes
+
+Given the purpose of our webpage, a sustainable web design which aims to minimize our environmental impact seems quite appropriate. As a general rule of thumb, a minimalistic design approach is sought after, while not comprimising user experience. Our proposals for web design changes, as well as sources with general guidelines on sustainable web design, can be found in our shared design document. Everyone is encouraged to share design ideas and pictures in the document, which can be found here: https://docs.google.com/document/d/15Gy1Lkh3RP-vnlTLJ4eCP6kqifS_cOSXQxEBNxlattw/edit?usp=sharing. 
+
+Here is an examplatory "mockup" of a possible web design for our emission app: 
+
 
 ## Weekly progress
 
@@ -45,6 +51,4 @@ The coding environment here in GitHub was created.
 #### Week 6 - Task 2: 
 We have uploaded files from a repository to our repository, and read a directory tree from other developers. 
 #### Week 7 - Task 3: 
-The diary team created a shared document for design change proposals, which can be accessed and edited by following this link: https://docs.google.com/document/d/15Gy1Lkh3RP-vnlTLJ4eCP6kqifS_cOSXQxEBNxlattw/edit?usp=sharing. Everyone is encouraged to share design change ideas and pictures in the shared document. 
-
-The app developement team have changed the layout for the app. They have changed the favicon and the background color to cde4da. In the index section they have changed the name to "Emissions calculator for ENE425, Group 1. 
+The diary team created a shared document for design change proposals, which can be accessed by the link in the "Design changes" section above. The app developement team have changed the layout for the app. They have changed the favicon and the background color to cde4da. In the index section they have changed the name to "Emissions calculator for ENE425, Group 1. 
