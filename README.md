@@ -57,3 +57,5 @@ The coding environment here in GitHub was created.
 We have uploaded files from a repository to our repository, and read a directory tree from other developers. 
 #### Week 7 - Task 3: 
 The diary team created a shared document for design change proposals, which can be accessed by the link in the "Design changes" section above. The app developement team have changed the layout for the app. They have changed the favicon and the background color to cde4da. In the index section they have changed the name to "Emissions calculator for ENE425, Group 1. 
+#### Week 8 - Task 4: 
+
