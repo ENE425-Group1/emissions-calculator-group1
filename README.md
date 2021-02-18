@@ -59,7 +59,7 @@ We have uploaded files from a repository to our repository, and read a directory
 The diary team created a shared document for design change proposals, which can be accessed by the link in the "Design changes" section above. The app developement team have changed the layout for the app. They have changed the favicon and the background color to cde4da. In the index section they have changed the name to "Emissions calculator for ENE425, Group 1. 
 #### Week 8 - Task 4: 
 
-####Post your suggestions to the questions below:
+#### Post your suggestions to the questions below:
 Question 1. What other cloud service can be used to deploy apps from github repo’s?
     -
 Question 2. What options would you consider to make your app safer against attacks? (Attacks examples: Abusive requests that could crash your server; password theft)
