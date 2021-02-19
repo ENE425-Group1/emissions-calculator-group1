@@ -41,6 +41,13 @@ To have a basic understanding it is important to have a classification of transp
 #### Conversion Factors for Greenhouse Gas Reporting
 [Here](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/891105/Conversion_Factors_2020_-_Condensed_set__for_most_users_.xlsx) are the conversion factors used by UK and international organisations to report on 2020 greenhouse gas emissions. For instance, one can find how many kilograms of CO2 emissions the different car types
 
+The UK Government greenhouse gas conversion factors [https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/901692/conversion-factors-2020-methodology.pdf] also include detailed information about average emissions of cars (page 54), buses (p. 60), motorcycles (p. 61), rail (p.64) and aviation (p.76-78 and 81/82). It is distinguished between fuel types and even different brands.
+Developed out of this data this site [https://ourworldindata.org/travel-carbon-footprint] shows the carbon footprint per person per km with different means of transport.
+
+#### The Norwegian Emission inventory 2016 and IPCC and NFR methodology
+This document shows how the Norwegian government calculates emissions. On the pages 49-74 it deals with the emissions from transport. Norway uses mainly the methodology from IPCC and NFR. The IPCC methodology to calculate emissions in the transport sector is explained in the following document: [https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter8.pdf]. It shows the range of emissions for different means of transport on page 610. 
+The NFR methodology is also used in the UK. You can find information about it in this document:[https://uk-air.defra.gov.uk/assets/documents/reports/cat07/1804121004_Road_transport_emissions_methodology_report_2018_v1.1.pdf]. CO2 emissions of cars, motorcycles and buses - distinguished by fuel type and type of drive (highway, city, etc.) - are stated on pages 32/33.
+
 ## Design changes
 
 Given the purpose of our webpage, a sustainable web design which aims to minimize our environmental impact seems quite appropriate. As a general rule of thumb, a minimalistic design approach is sought after, while not comprimising user experience. Our proposals for web design changes, as well as sources with general guidelines on sustainable web design, can be found in our shared design document. Everyone is encouraged to share design ideas and pictures in the document, which can be found here: https://docs.google.com/document/d/15Gy1Lkh3RP-vnlTLJ4eCP6kqifS_cOSXQxEBNxlattw/edit?usp=sharing. 
