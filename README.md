@@ -45,7 +45,7 @@ The UK Government greenhouse gas conversion factors [https://assets.publishing.s
 Developed out of this data this site [https://ourworldindata.org/travel-carbon-footprint] shows the carbon footprint per person per km with different means of transport.
 
 #### The Norwegian Emission inventory 2016 and IPCC and NFR methodology
-This document shows how the Norwegian government calculates emissions. On the pages 49-74 it deals with the emissions from transport. Norway uses mainly the methodology from IPCC and NFR. The IPCC methodology to calculate emissions in the transport sector is explained in the following document: [https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter8.pdf]. It shows the range of emissions for different means of transport on page 610. 
+This document [https://www.ssb.no/en/natur-og-miljo/artikler-og-publikasjoner/_attachment/279491?_ts=1576a6ddf40] shows how the Norwegian government calculates emissions. On the pages 49-74 it deals with the emissions from transport. Norway uses mainly the methodology from IPCC and NFR. The IPCC methodology to calculate emissions in the transport sector is explained in the following document: [https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter8.pdf]. It shows the range of emissions for different means of transport on page 610. 
 The NFR methodology is also used in the UK. You can find information about it in this document:[https://uk-air.defra.gov.uk/assets/documents/reports/cat07/1804121004_Road_transport_emissions_methodology_report_2018_v1.1.pdf]. CO2 emissions of cars, motorcycles and buses - distinguished by fuel type and type of drive (highway, city, etc.) - are stated on pages 32/33.
 
 ## Design changes
