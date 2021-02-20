@@ -77,4 +77,5 @@ Question 1. What other cloud service can be used to deploy apps from github repo
 
 
 Question 2. What options would you consider to make your app safer against attacks? (Attacks examples: Abusive requests that could crash your server; password theft)
-    -
+
+-To avoid a crash in our server due bots attacks, we could implement a CAPTCHAs on our Website to have a "I'm not a robot" check. With this solution only humans would be able to use/login our website, for example through an imagen selection test. 
