@@ -57,6 +57,9 @@ This site https://www.co2nnect.org/help_sheets/?op_id=602&amp;opt_id=98 can be u
 ### Cliamte calculator documentation report 
 This report give some usuful data on Co2/km for different transportation modes. The report also emphasize what methodolygy and sources that have been used for calculation. https://static.ducky.eco/calculator_documentation.pdf. Page 13-15 include a table of gCO2 eq/km for fussil fuel car, electric vehicle, hybrid car, motorbike, regular bus, train boat and flight. The numbers include the whole life cucle of the vehicles, both emissions from production and direct emissions from fuel combustion. 
 
+### Climate footprint from holiday (report in swedish)
+This report give useful insight in climate footprint from different souces of transportation, and differ between size of the vehicle and fuel type. https://klimatsmartsemester.se/sites/default/files/metodrapport-klimatsmart-semester-version-1.pdf. P. 8 include a table with data regarding size of the car and type of energy source- bensin, diesel, El, Fossilgas, biogas, etanol and biodisel. 
+
 ## Design changes
 
 Given the purpose of our webpage, a sustainable web design which aims to minimize our environmental impact seems quite appropriate. As a general rule of thumb, a minimalistic design approach is sought after, while not comprimising user experience. Our proposals for web design changes, as well as sources with general guidelines on sustainable web design, can be found in our shared design document. Everyone is encouraged to share design ideas and pictures in the document, which can be found here: https://docs.google.com/document/d/15Gy1Lkh3RP-vnlTLJ4eCP6kqifS_cOSXQxEBNxlattw/edit?usp=sharing. 
