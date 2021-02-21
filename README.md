@@ -30,10 +30,7 @@
             select_record.html
 
 ## Methodology Research
-#### This section is for research on relevant methods for calculating emissions from transportation. When adding to this section, include a short description of the methodology and referances to the source material and other relevant research (*URL links*), as shown in the example below: 
- 
-#### *Example*
-*This a short description of the findings of the research, and the methodology IEA has used to calculate the emission factors. The method is based on such and such research, and uses this and that data. The methodology is further described on this page: *URL link*. The research is similiar to several other sources on the issue, such as this research (*URL*) and this research (*URL*). On the other hand, there are also other findings with different results, such as the method used by "some statistic group" (*URL*), which gives lower emission factors. The majority of research, however, supports the described research.*
+#### This section is for research on relevant methods for calculating emissions from transportation. When adding to this section, include a short description of the methodology and referances to the source material and other relevant research (*URL links*).
 
 #### Defining the term "Vehicle"
 To have a basic understanding it is important to have a classification of transport as urban transport or industrial transport (e.g. maritime, air). For a more segregated classification of the term "vehicle" under EC standards, this [link](https://www.eafo.eu/knowledge-center/european-vehicle-categories), connected to the last study of ["Determining the Environmental Impacts of Conventional and Alternatively Fuelled Vehicles Through LCA"](https://ec.europa.eu/clima/sites/clima/files/transport/vehicles/docs/2020_study_main_report_en.pdf) by Ricardo Energy and Environment for the European Comission. The segregation used in this study is practical for our purposes. However, a more advanced methodology is used than what is our intention with this app. 
