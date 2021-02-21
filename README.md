@@ -57,6 +57,9 @@ This report give some usuful data on Co2/km for different transportation modes. 
 ### Climate footprint from holiday (report in swedish)
 This report give useful insight in climate footprint from different souces of transportation, and differ between size of the vehicle and fuel type. https://klimatsmartsemester.se/sites/default/files/metodrapport-klimatsmart-semester-version-1.pdf. P. 8 include a table with data regarding size of the car and type of energy source- bensin, diesel, El, Fossilgas, biogas, etanol and biodisel. 
 
+### The Handbook Emission Factors for Road Transport (HBEFA)
+[HBEFA](https://www.hbefa.net/e/index.html) provides emission factors for all current vehicle categories (PC, LDV, HGV, urban buses, coaches and motor cycles), each divided into different categories, for a wide variety of traffic situations. The emission factors are weighted average values for the countries Germany, Austria, Switzerland, France, Norway and Sweden, and can be accessed [here](https://www.hbefa.net/e/index.html). The Norwegian Environment Agency has also used these emission factors in their calculations. 
+
 ## Design changes
 
 Given the purpose of our webpage, a sustainable web design which aims to minimize our environmental impact seems quite appropriate. As a general rule of thumb, a minimalistic design approach is sought after, while not comprimising user experience. Our proposals for web design changes, as well as sources with general guidelines on sustainable web design, can be found in our shared design document. Everyone is encouraged to share design ideas and pictures in the document, which can be found here: https://docs.google.com/document/d/15Gy1Lkh3RP-vnlTLJ4eCP6kqifS_cOSXQxEBNxlattw/edit?usp=sharing. 
@@ -80,11 +83,11 @@ Question 1. What other cloud service can be used to deploy apps from github repo
 
 [Azure](https://azure.microsoft.com/en-us/free/search/?&ef_id=Cj0KCQiA4L2BBhCvARIsAO0SBdZmo_X3KZDPWmbj9okoBFuotwwPaxNOZVrtfouGt3bq-pfrAxJC9YMaAnugEALw_wcB:G:s&OCID=AID2100088_SEM_Cj0KCQiA4L2BBhCvARIsAO0SBdZmo_X3KZDPWmbj9okoBFuotwwPaxNOZVrtfouGt3bq-pfrAxJC9YMaAnugEALw_wcB:G:s) is Microsoft's own cloud solution (public cloud) and web portal and enables continuous deployment from GitHub.
 
-[Amazon Web Services (AWS)](https://aws.amazon.com/) is Amazon’s cloud platform. It is said to be the most comprehensive and adopted cloud platform. AWS can be used to deploy apps from GitHub repositories’. 
+- [Amazon Web Services (AWS)](https://aws.amazon.com/) is Amazon’s cloud platform. It is said to be the most comprehensive and adopted cloud platform. AWS can be used to deploy apps from GitHub repositories’. 
 
-[Google Cloud Platform (GCP)](https://cloud.google.com/) is offered by Google and runs the same infrastructure that Google uses internally for its end-user products. GCP allows continuous deployment from GitHub repository. 
+- [Google Cloud Platform (GCP)](https://cloud.google.com/) is offered by Google and runs the same infrastructure that Google uses internally for its end-user products. GCP allows continuous deployment from GitHub repository. 
 
 
 Question 2. What options would you consider to make your app safer against attacks? (Attacks examples: Abusive requests that could crash your server; password theft)
 
--To avoid a crash in our server due bots attacks, we could implement a CAPTCHAs on our Website to have a "I'm not a robot" check. With this solution only humans would be able to use/login our website, for example through an imagen selection test. 
+- To avoid a crash in our server due bots attacks, we could implement a CAPTCHAs on our Website to have a "I'm not a robot" check. With this solution only humans would be able to use/login our website, for example through an imagen selection test. 
