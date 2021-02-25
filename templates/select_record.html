@@ -37,7 +37,6 @@ Select a Record
 				<th>Fuel Type</th>
 				<th>Date</th>
 				<th>CO2 kg/passenger km</th>
-				<th>CH4 kg/passenger km</th>
 				<th>User</th>
 				<th>Updated</th>
 			</tr>
@@ -51,13 +50,12 @@ Select a Record
 				<td>{{ value.fuel }}</td>
 				<td>{{ value.date }}</td>
 				<td>{{ value.co2 }}</td>
-				<td>{{ value.ch4 }}</td>
 				<td>{{ value.user_name }}</td>
 				<td>{{ value.updated }}</td>
 			</tr>
 			{% endfor %}
 		</table>
-
+		  
 		<div class="form-group lead alert alert-success pb-4">
           <p>What do you want to do with the selected record?</p>
 
