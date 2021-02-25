@@ -169,7 +169,7 @@ class AddRecord(FlaskForm):
   id_field = HiddenField()
   ##Transport
   kms = FloatField("Kilometers",[InputRequired()])
-  transport_type = SelectField("Type of Transport",
+  transport_type = SelectField("Type of transport",
                                 [InputRequired()],
                                 choices=[
                                         ('Walk', 'Walk'),
@@ -186,40 +186,36 @@ class AddRecord(FlaskForm):
                                     ])
   
 
-  fuel_type = SelectField("Fuel Type",
+  fuel_type = SelectField("Fuel type",
                            validators=[InputRequired()],choices=[])
   
   date=DateField("Date",[InputRequired()])
   
 
-  gas =FloatField("kg/passenger km",[Optional()],description='Add CO2 kg/passenger km if known. \
+  gas =FloatField("CO2 kg/km",[Optional()],
+                  description='Add CO2 kg/km if known. \
                   Otherwise, leave blank and a default corresponding to the fuel \
-                 type and vehicle average from "UK Government GHG Conversion Factors for Company Reporting" will be used')
+                  type and vehicle average will be used. The emissions are calculated with CO2 factors from \
+                  "The Handbook of Emission Factors for Road Transport (HBEFA)" for all road vehicle types, \
+                  while "planes" and "ferries" are calculated with factors from \
+                  "The UK Government GHG Conversion Factors for Company Reporting"')
   
   submit = SubmitField("Submit")
 
 ##Emissions factor per transport in kg per passemger km
 ##++++++++++++++++++++++
-efco2={"Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
-       "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
+efco2={"Walk":{"No Fossil Fuel":0},
+       "Bicycle":{"No Fossil Fuel":0},
+       "Scooter":{"No Fossil Fuel":0},
+       "Motorbike":{"Petrol":0.091568,"No Fossil Fuel":0},
        "Car":{"Petrol":0.134603,"Diesel":0.138526,"No Fossil Fuel":0},
        "LDV":{"Petrol":0.150778,"Diesel":0.177546,"No Fossil Fuel":0},
        "HDV":{"Petrol":0.572078,"Diesel":1.113401,"No Fossil Fuel":0},
-       "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0},
+       "Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
+       "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
        "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},
-       "Motorbike":{"Petrol":0.091568,"No Fossil Fuel":0},
-       "Scooter":{"No Fossil Fuel":0},
-       "Bicycle":{"No Fossil Fuel":0},
-       "Walk":{"No Fossil Fuel":0}}
-
-#efch4={"Bus":{"Diesel":2e-5,"CNG":2.5e-3,"Petrol":2e-5,"No Fossil Fuel":0},
-#       "Car":{"Hybrid":1.5e-4,"Petrol":3.1e-4,"Diesel":3e-6,"No Fossil Fuel":0},
-#       "Plane":{"Jet Fuel":1.1e-4,"No Fossil Fuel":0},
-#       "Ferry":{"DO":3e-5,"HFO":3e-5,"No Fossil Fuel":0},
-#       "Motorbike":{"Petrol":2.1e-3,"No Fossil Fuel":0},
-#       "Scooter":{"No Fossil Fuel":0},
-#       "Bicycle":{"No Fossil Fuel":0},
-#       "Walk":{"No Fossil Fuel":0}}
+       "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0}
+       }
 
 #+++++++++++++++++++++++
 
@@ -350,10 +346,8 @@ def add_record():
         
         if gas=="":     
             co2=float(kms)*efco2[transport][fuel]
-            #ch4=float(kms)*efch4[transport][fuel]
         else:
-            co2=float(kms)*float(gas) 
-            #ch4=float(kms)*efch4[transport][fuel]
+            co2=float(kms)*float(gas)
             
         user=SuperUser.query.filter_by(id=current_user.user_name).first()
         
@@ -361,11 +355,11 @@ def add_record():
         group_rec=user.group_name
         
         # the data to be inserted into Emission model - the table, records
-        record = Emissions(kms, transport, fuel, date, co2, ch4, user_rec, updated)
+        record = Emissions(kms, transport, fuel, date, co2, user_rec, updated)
         
-        backup= SuperBackUp(kms, transport, fuel, date, co2, ch4, user_rec, updated)
+        backup= SuperBackUp(kms, transport, fuel, date, co2, user_rec, updated)
         
-        global_db= SuperGlobal(kms, transport, fuel, date, co2, ch4, user_rec, updated, group_rec)
+        global_db= SuperGlobal(kms, transport, fuel, date, co2, user_rec, updated, group_rec)
         
         # Flask-SQLAlchemy magic adds record to database
         db.session.add(record)
@@ -377,7 +371,7 @@ def add_record():
         message = f"The record for {transport} on {date} has been submitted."
         return render_template('add_record.html', message=message)
     else:
-        # show validaton errors
+        # show validation errors
         for field, errors in form1.errors.items():
             for error in errors:
                 flash("Error in {}: {}".format(
@@ -472,19 +466,15 @@ def edit_result():
      
     emissions_global.gas=request.form["gas"]
     
-    if emissions.gas=="":     
+    if emissions.gas=="":
         emissions.co2=float(emissions.kms)*efco2[emissions.transport][emissions.fuel]
-        emissions.ch4=float(emissions.kms)*efch4[emissions.transport][emissions.fuel]
         
         emissions_global.co2=float(emissions_global.kms)*efco2[emissions_global.transport][emissions_global.fuel]
-        emissions_global.ch4=float(emissions_global.kms)*efch4[emissions_global.transport][emissions_global.fuel]
     else:
         emissions.co2=float(emissions.kms)*float(emissions.gas)
-        emissions.ch4=float(emissions.kms)*efch4[emissions.transport][emissions.fuel]
-        
+
         emissions_global.co2=float(emissions_global.kms)*float(emissions_global.gas)
-        emissions_global.ch4=float(emissions_global.kms)*efch4[emissions_global.transport][emissions_global.fuel]
-            
+
     emissions.user=SuperUser.query.filter_by(id=current_user.user_name).first().user_name
     form1 = AddRecord()
     form1.fuel_type.choices=[(fuel,fuel) for fuel in efco2[emissions.transport].keys()]
