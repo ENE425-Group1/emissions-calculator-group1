@@ -25,18 +25,18 @@ Emissions Record ENE425
       <h2 class="pt-5 pb-2">Emissions Calculator for ENE425. Group 1</h2>
 
       <p class="lead">Welcome {{user_rec}}</p>
-
+      <p class="lead alert alert-primary">Calculate your transport emissions</p>	
       <p><a href="{{ url_for('add_record') }}">Submit a new record</a>.</p>
 	    <p></p>
 	    <p></p>
-      <p><a href="{{ url_for('inventory_all') }}">View emission records</a></p>
-      <p>Select the records for the type of transport of your choice:</p>
+      <p>View emission records:</p>
       <ul>
+	  <li><a href="{{ url_for('inventory_all') }}">All records:</a></li>
           {% for s in transport %}
           <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
           {% endfor %}
       </ul>
-      <p><a href="{{ url_for('select_record') }}">Select a record for editing</a>.</p>
+      <p><a href="{{ url_for('select_record') }}">Edit emission records</a>.</p>
       <p><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
   </div>
