@@ -27,13 +27,6 @@ Emissions per Transport List
   		{% else %}
 		  <p class="lead alert alert-primary">This is the list of all records in inventory.</p>		   
   		{% endif %}
-	  <p class="lead alert alert-primary"><a href="{{ url_for('download') }}">Download all records</a></p>
-	    <p>Filter records by transport type:</p> 
-		<ul>
-		  {% for s in transport %}
-		  <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
-		  {% endfor %}
-	      </ul>
 	  <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
 
 		<table class="table">
