@@ -30,6 +30,12 @@ Emissions per Transport List
   		{% else %}
 
 		  <p class="lead alert alert-warning">This is the list of all records in inventory.</p>
+		  <p>Select the records for the type of transport of your choice:</p>
+		      <ul>
+			  {% for s in transport %}
+			  <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
+			  {% endfor %}
+		      </ul>
 
   		{% endif %}
 
