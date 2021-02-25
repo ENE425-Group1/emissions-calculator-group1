@@ -45,13 +45,13 @@ app.config['SQLALCHEMY_BINDS'] = {
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 ###Login Setting###
-login_manager = LoginManager() 
+login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
- 
+
 # this variable, db, will be used for all SQLAlchemy commands
 db = SQLAlchemy(app)
-    
+
 # each table in the database needs a class to be created for it
 # db.Model is required - don't change it
 # identify all columns by name and data type
@@ -76,8 +76,8 @@ class Emissions(db.Model):
         self.co2 = co2
         self.ch4 = ch4
         self.user_name = user_name
-        self.updated = updated    
-        
+        self.updated = updated
+
 engine_local = create_engine(DB_VAR)
 engine_super =create_engine(OUT_DB_VAR)
 
@@ -94,13 +94,13 @@ class SuperUser(UserMixin,db.Model):
 
     def __init__(self, user_name):
         self.user_name= user_name
-        
-####Everything is recorded. nothing removed        
+
+####Everything is recorded. nothing removed
 
 class SuperBackUp(db.Model):
     __tablename__= 'backup'
     __bind_key__="db2"
-    
+
     id = db.Column(db.Integer, primary_key=True)
     kms = db.Column(db.Float)
     transport = db.Column(db.String)
@@ -110,7 +110,7 @@ class SuperBackUp(db.Model):
     ch4= db.Column(db.Float)
     user_name= db.Column(db.String)
     updated = db.Column(db.String)
-    
+
     def __init__(self, kms, transport, fuel, date, co2, ch4, user_name, updated):
         self.kms = kms
         self.transport = transport
@@ -120,13 +120,13 @@ class SuperBackUp(db.Model):
         self.ch4 = ch4
         self.user_name = user_name
         self.updated = updated
-        
+
 ###Global DB dynamically updated from sessions.
-    
+
 class SuperGlobal(db.Model):
     __tablename__= 'global'
     __bind_key__="db2"
-    
+
     id = db.Column(db.Integer, primary_key=True)
     kms = db.Column(db.Float)
     transport = db.Column(db.String)
@@ -137,8 +137,8 @@ class SuperGlobal(db.Model):
     user_name= db.Column(db.String)
     updated = db.Column(db.String)
     group_name = db.Column(db.String)
-    
-    def __init__(self, kms, transport, fuel, date, co2, ch4, user_name, updated, group_name): 
+
+    def __init__(self, kms, transport, fuel, date, co2, ch4, user_name, updated, group_name):
         self.kms = kms
         self.transport = transport
         self.fuel = fuel
@@ -147,8 +147,8 @@ class SuperGlobal(db.Model):
         self.ch4 = ch4
         self.user_name = user_name
         self.updated = updated
-        self.group_name = group_name  
- 
+        self.group_name = group_name
+
 @app.before_first_request
 def before_first_request():
     db.create_all()
@@ -157,12 +157,12 @@ def before_first_request():
 
 class LoginRecord(FlaskForm):
     user= StringField("User",validators=[InputRequired()])
-    
+
     password = PasswordField('Password', validators=[DataRequired()])
-        
+
     submit = SubmitField("Submit")
-    
-    
+
+
 # form for add_record and edit_or_delete
 # each field includes validation requirements and messages
 class AddRecord(FlaskForm):
@@ -172,25 +172,22 @@ class AddRecord(FlaskForm):
   transport_type = SelectField("Type of transport",
                                 [InputRequired()],
                                 choices=[
-                                        ('Walk', 'Walk'),
-                                        ('Bicycle', 'Bicycle'),
-                                        ('Scooter','E-scooter'),
-                                        ('Motorbike', "Motorbike"),
-                                        ('Car', 'Car (passenger)'),
-                                        ('LDV','Light duty vehicle (weight <= 3,5 Tons)'),
-                                        ('HDV', 'Heavy duty vehicle (weight > 3,5 Tons)'),
-                                        ('Bus', 'Bus'),  # transit/urban bus for short-distance
-                                        ('Coach', 'Coach'),  # intercity bus for long-distance
+                                        ('Bus', 'Bus'),
+                                        ('Car', 'Car'),
+                                        ('Plane', 'Plane'),
                                         ('Ferry', 'Ferry'),
-                                        ('Plane', 'Plane')
+                                        ('Scooter', 'E-Scooter'),
+                                        ('Bicycle', 'Bicycle'),
+                                        ('Motorbike',"Motorbike"),
+                                        ('Walk', 'Walk')
                                     ])
-  
+
 
   fuel_type = SelectField("Fuel type",
                            validators=[InputRequired()],choices=[])
-  
+
   date=DateField("Date",[InputRequired()])
-  
+
 
   gas =FloatField("CO2 kg/km",[Optional()],
                   description='Add CO2 kg/km if known. \
@@ -199,7 +196,7 @@ class AddRecord(FlaskForm):
                   "The Handbook of Emission Factors for Road Transport (HBEFA)" for all road vehicle types, \
                   while "planes" and "ferries" are calculated with factors from \
                   "The UK Government GHG Conversion Factors for Company Reporting"')
-  
+
   submit = SubmitField("Submit")
 
 ##Emissions factor per transport in kg per passemger km
@@ -244,21 +241,21 @@ def load_user(user_id):
 @app.route('/login',methods=['GET', 'POST'])
 def login():
     formlog=LoginRecord(request.form)
-    
+
     if request.method =="POST" and formlog.validate_on_submit():
         ##check user. Add descendent to have record specific for the groupo first O.W admin record first
         user=SuperUser.query.filter_by(user_name=formlog.user.data).order_by(SuperUser.id.desc()).first()
-        
+
         if user and formlog.password.data == user.password and GROUP_NAME==user.group_name:
             login_user(user)
-            session.pop('_flashes', None) 
+            session.pop('_flashes', None)
             return (redirect(url_for("index")))
         else:
-        # if password is incorrect , redirect to login page
+        # if password is in correct , redirect to login page
             message = "User or password incorrect "
-            
+
             return render_template('login.html', formlog=formlog, message=message)
-            
+
     return render_template('login.html', formlog = formlog)
 
 
@@ -268,14 +265,14 @@ def index():
     # get a list of unique values in the style column
     user_rec=SuperUser.query.filter_by(id=current_user.user_name).first().student
     transport = Emissions.query.with_entities(Emissions.transport).distinct()
-    
+
     ###Outer Plot
     global_emissions=pd.read_sql("SELECT * FROM global",engine_super)
     global_emissions["date"]= pd.to_datetime(global_emissions["date"],yearfirst=True)
     global_emissions=global_emissions.sort_values(by="date")
     global_emissions=global_emissions.groupby(["date","group_name"]).agg({"co2":sum})
     global_emissions=global_emissions.reset_index()
-    
+
     if global_emissions.shape[0]!=0:
         global_emissions["date"]=global_emissions["date"].dt.strftime('%Y-%m-%d %H:%M:%S')
         fig_global = px.line(global_emissions, x="date", y="co2", color='group_name',
@@ -285,11 +282,11 @@ def index():
                      "group_name": "Group Name"
                  },
                               title="Emissions per Group")
-        
+
         fig_global.update_traces(mode='markers+lines')
-        
+
         plot_div_global = plot(fig_global, output_type='div', include_plotlyjs=False)
-    
+
     else:
         plot_div_global = ""
     if transport.first() is not None: ##To avoid crash when DB is empty
@@ -300,8 +297,8 @@ def index():
         group_emissions=group_emissions.groupby(["date","user_name"]).agg({"co2":sum})
         group_emissions=group_emissions.reset_index()
         group_emissions["date"]=group_emissions["date"].dt.strftime('%Y-%m-%d %H:%M:%S')
-        
-        fig = px.line(group_emissions, x="date", y="co2", color='user_name', 
+
+        fig = px.line(group_emissions, x="date", y="co2", color='user_name',
                       labels={
                      "co2": "CO2 kg/passenger km",
                      "date": "Date",
@@ -310,11 +307,11 @@ def index():
                      title="Emissions per Group Member")
         fig.update_traces(mode='markers+lines')
         plot_div = plot(fig, output_type='div', include_plotlyjs=False)
-    
-    
+
+
         return render_template('index.html',transport=transport,user_rec=user_rec,plot_div=plot_div,
                                plot_div_global=plot_div_global)
-    
+
     else:
         return render_template('index.html',transport=transport,user_rec=user_rec, plot_div_global=plot_div_global)
 
@@ -341,31 +338,31 @@ def add_record():
         date = request.form['date']
         # get today's date from function, above all the routes
         updated = stringdate()
-        
+
         gas=request.form["gas"]
-        
-        if gas=="":     
+
+        if gas=="":
             co2=float(kms)*efco2[transport][fuel]
         else:
             co2=float(kms)*float(gas)
-            
+
         user=SuperUser.query.filter_by(id=current_user.user_name).first()
-        
+
         user_rec=user.student
         group_rec=user.group_name
-        
+
         # the data to be inserted into Emission model - the table, records
         record = Emissions(kms, transport, fuel, date, co2, user_rec, updated)
-        
+
         backup= SuperBackUp(kms, transport, fuel, date, co2, user_rec, updated)
-        
+
         global_db= SuperGlobal(kms, transport, fuel, date, co2, user_rec, updated, group_rec)
-        
+
         # Flask-SQLAlchemy magic adds record to database
         db.session.add(record)
         db.session.add(backup)
         db.session.add(global_db)
-        
+
         db.session.commit()
         # create a message to send to the template
         message = f"The record for {transport} on {date} has been submitted."
@@ -379,27 +376,27 @@ def add_record():
                     error
                 ), 'error')
         return render_template('add_record.html', form1=form1)
-  
+
 @app.route('/fuel_type/<transport>')
 def fuel_type(transport):
     Allfuel=efco2[transport].keys()
-    
+
     fuelArray= []
-    
+
     for fuel in Allfuel:
         fuelObj={}
         fuelObj["transport"]=transport
         fuelObj["fuel"]=fuel
         fuelArray.append(fuelObj)
-    
+
     return jsonify({"fuel_json": fuelArray})
-        
-        
+
+
 #select a record to edit or delete
 @app.route('/select_record')
 def select_record():
     emissions = Emissions.query.order_by(Emissions.date).all()
-    return render_template('select_record.html', emissions=emissions)    
+    return render_template('select_record.html', emissions=emissions)
 
 # edit or delete - come here from form in /select_record
 @app.route('/edit_or_delete', methods=['POST'])
@@ -424,7 +421,7 @@ def delete_result():
                                               SuperGlobal.fuel==emissions.fuel,
                                               SuperGlobal.date==emissions.date,
                                               SuperGlobal.updated==emissions.updated).first()
-    
+
     if purpose == 'delete':
         db.session.delete(emissions)
         db.session.delete(emissions_global)
@@ -453,9 +450,9 @@ def edit_result():
     emissions.date=request.form['date']
     # get today's date from function, above all the routes
     emissions.updated = stringdate()
-     
+
     emissions.gas=request.form["gas"]
-        
+
     # update all values
     emissions_global.kms = request.form['kms']
     emissions_global.transport = request.form['transport_type']
@@ -463,12 +460,12 @@ def edit_result():
     emissions_global.date=request.form['date']
     # get today's date from function, above all the routes
     emissions_global.updated = stringdate()
-     
+
     emissions_global.gas=request.form["gas"]
-    
+
     if emissions.gas=="":
         emissions.co2=float(emissions.kms)*efco2[emissions.transport][emissions.fuel]
-        
+
         emissions_global.co2=float(emissions_global.kms)*efco2[emissions_global.transport][emissions_global.fuel]
     else:
         emissions.co2=float(emissions.kms)*float(emissions.gas)
@@ -499,17 +496,17 @@ def edit_result():
 @app.route("/download")
 def download():
     si = StringIO()
-    
+
     outcsv=csv.writer(si)
-    
+
     con=engine_local.connect()
-    
+
     result= con.execute('select * from records')
-    
+
     outcsv.writerow(x for x in result._metadata.keys)
     # dump rows
     outcsv.writerows(row for row in result)
-    
+
     mem = BytesIO()
     mem.write(si.getvalue().encode('utf-8'))
     mem.seek(0)
@@ -517,12 +514,12 @@ def download():
 
     output = send_file(mem,mimetype="text/csv",
                        attachment_filename= 'emissions.csv',as_attachment=True, cache_timeout=0)
-    
+
     return output
-    
+
     con.close()
     os.remove('emissions.csv')
-    
+
 @app.route('/logout/')
 @login_required
 def logout(methods=["GET"]):
@@ -531,7 +528,7 @@ def logout(methods=["GET"]):
     logout_user()
     engine_local.dispose()
     # redirecting to home page
-    return redirect(url_for('login'))    
+    return redirect(url_for('login'))
 # +++++++++++++++++++++++
 # error routes
 
