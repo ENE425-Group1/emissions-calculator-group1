@@ -2,13 +2,23 @@
 
 {% block styles %}
 {{ super() }}
-	<style>
-    body { background: #cde4da;
-          font-size:18px;}
-  </style>
-  <link rel="icon" type="image/png" href="static/favicon.png">
+<style>
+	body { 
+	    background: #cde4da;
+	    font-size:18px;
+	}
+	.records {
+		margin-top: 1cm;
+	}
+	.lead alert alert-primary {
+		background-color:#cde4d1;
+		color:#FFFFFF;
+		
+	}
+	
+</style>
+<link rel="icon" type="image/png" href="static/favicon.png">
 {% endblock %}
-
 
 {% block title %}
 Emissions Record ENE425
@@ -26,17 +36,16 @@ Emissions Record ENE425
 
       <p class="lead">Welcome {{user_rec}}</p>
       <p class="lead alert alert-primary"><a href="{{ url_for('add_record') }}">Calculate your transport emissions</a></p>	
-	    <p></p>
-	    <p></p>
-      <p>View emission records:</p>
+      <p class="records">View emission records:</p>
       <ul>
 	  <li><a href="{{ url_for('inventory_all') }}">All records</a></li>
           {% for s in transport %}
           <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
           {% endfor %}
       </ul>
-      <p><a href="{{ url_for('select_record') }}">Edit emission records</a>.</p>
-      <p><a href="{{ url_for('logout') }}">Logout</a></p>
+	    <p><a href="{{ url_for('download') }}">Download</a></p> 
+	    <p><a href="{{ url_for('select_record') }}">Edit emission records</a>.</p>
+	    <p><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
   </div>
 </div>
