@@ -30,6 +30,12 @@ Emissions Record ENE425
 	    <p></p>
 	    <p></p>
       <p><a href="{{ url_for('inventory_all') }}">View emission records</a></p>
+      <p>Select the records for the type of transport of your choice:</p>
+      <ul>
+          {% for s in transport %}
+          <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
+          {% endfor %}
+      </ul>
       <p><a href="{{ url_for('select_record') }}">Select a record for editing</a>.</p>
       <p><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
