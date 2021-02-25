@@ -39,10 +39,10 @@ The original method for the app is based on the emission factors from "The UK Go
 
 The Handbook Emission Factors for Road Transport (HBEFA) provides emission factors for all current vehicle categories (PC, LDV, HGV, urban buses, coaches and motor cycles), each divided into different categories, for a wide variety of traffic situations. Emission factors for all regulated and the most important non-regulated pollutants as well as fuel/energy consumption and CO2 are included.
 
-[Webpage](https://www.hbefa.net/e/index.html)
-[Emission factors](https://www.hbefa.net/e/index.html)
-[About (wiki)](https://en.wikipedia.org/wiki/Handbook_Emission_Factors_for_Road_Transport_(HBEFA)#Vehicle_category)
-[About (presentation)](https://www.epd.gov.hk/epd/sites/default/files/epd/english/environmentinhk/air/guide_ref/files/HBEFA_COPERT.pdf)
+- [Webpage](https://www.hbefa.net/e/index.html)
+- [Emission factors](https://www.hbefa.net/e/index.html)
+- [About (wiki)](https://en.wikipedia.org/wiki/Handbook_Emission_Factors_for_Road_Transport_(HBEFA)#Vehicle_category)
+- [About (presentation)](https://www.epd.gov.hk/epd/sites/default/files/epd/english/environmentinhk/air/guide_ref/files/HBEFA_COPERT.pdf)
 
 
 #### Conversion Factors for Greenhouse Gas Reporting by the UK Government
