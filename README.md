@@ -30,10 +30,7 @@
             select_record.html
 
 ## Methodology Research
-#### This section is for research on relevant methods for calculating emissions from transportation. When adding to this section, include a short description of the methodology and referances to the source material and other relevant research (*URL links*).
-
-#### Defining the term "Vehicle"
-To have a basic understanding it is important to have a classification of transport as urban transport or industrial transport (e.g. maritime, air). For a more segregated classification of the term "vehicle" under EC standards, this [link](https://www.eafo.eu/knowledge-center/european-vehicle-categories), connected to the last study of ["Determining the Environmental Impacts of Conventional and Alternatively Fuelled Vehicles Through LCA"](https://ec.europa.eu/clima/sites/clima/files/transport/vehicles/docs/2020_study_main_report_en.pdf) by Ricardo Energy and Environment for the European Comission. The segregation used in this study is practical for our purposes. However, a more advanced methodology is used than what is our intention with this app. 
+#### This section is for research on relevant methods for calculating emissions from transportation. The selected method is described below:
 
 #### Conversion Factors for Greenhouse Gas Reporting
 [Here](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/891105/Conversion_Factors_2020_-_Condensed_set__for_most_users_.xlsx) are the conversion factors used by UK and international organisations to report on 2020 greenhouse gas emissions. For instance, one can find how many kilograms of CO2 emissions the different car types
@@ -41,24 +38,8 @@ To have a basic understanding it is important to have a classification of transp
 [The UK Government greenhouse gas conversion factors](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/901692/conversion-factors-2020-methodology.pdf) also include detailed information about average emissions of cars (page 54), buses (p. 60), motorcycles (p. 61), rail (p.64) and aviation (p.76-78 and 81/82). It is distinguished between fuel types and even different brands.
 Developed out of this data, this [site](https://ourworldindata.org/travel-carbon-footprint) shows the carbon footprint per person per km with different means of transport.
 
-#### The Norwegian Emission inventory 2016 and IPCC and NFR methodology
-[This document](https://www.ssb.no/en/natur-og-miljo/artikler-og-publikasjoner/_attachment/279491?_ts=1576a6ddf40) shows how the Norwegian government calculates emissions. On the pages 49-74 it deals with the emissions from transport. Norway uses mainly the methodology from IPCC and NFR. The IPCC methodology to calculate emissions in the transport sector is explained in this [document](https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter8.pdf). It shows the range of emissions for different means of transport on page 610. 
-The NFR methodology is also used in the UK. You can find information about it in this document:[https://uk-air.defra.gov.uk/assets/documents/reports/cat07/1804121004_Road_transport_emissions_methodology_report_2018_v1.1.pdf]. CO2 emissions of cars, motorcycles and buses - distinguished by fuel type and type of drive (highway, city, etc.) - are stated on pages 32/33.
+#### Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). 
 
-#### PAS 2070 by the British Standards Institution (BSI) - Assessment of GHG emissions of a city
-PAS 2070 is a GHG emission assessment specfication by The British Standards Institution (BSI) aiming to provide a consistent and comparable reporting of city scale greenhouse gas emissions. This [guide]( https://shop.bsigroup.com/upload/PAS2070_case_study_bookmarked.pdf) explains how to apply the standard to measure GHG emissions using London as an example. Chapter “B. Mobile sources of GHG emissions” on page 19 provides a detailed breakdown of the results and calculations using the DPSC methodology from mobile sources by mode of travel: road, railways, waterborne navigation and aviation. 
-
-### Calculation of emissions inspiration including possible errors in data
-This site https://www.co2nnect.org/help_sheets/?op_id=602&amp;opt_id=98 can be used for inspiration on what modes to include in our emission calculator app includindg possible errors in data to be conserned about. The site show possibe multipples to use per transportation type, and the project have used data from this source: https://webarchive.nationalarchives.gov.uk/20130403211631/http://archive.defra.gov.uk/environment/business/reporting/pdf/passenger-transport.pdf. This report is from 2008 but we have the report from 2020 further up under "Conversion factors for Greenhouse Gas Reprting". 
-
-### Cliamte calculator documentation report 
-This report give some usuful data on Co2/km for different transportation modes. The report also emphasize what methodolygy and sources that have been used for calculation. https://static.ducky.eco/calculator_documentation.pdf. Page 13-15 include a table of gCO2 eq/km for fussil fuel car, electric vehicle, hybrid car, motorbike, regular bus, train boat and flight. The numbers include the whole life cucle of the vehicles, both emissions from production and direct emissions from fuel combustion. 
-
-### Climate footprint from holiday (report in swedish)
-This report give useful insight in climate footprint from different souces of transportation, and differ between size of the vehicle and fuel type. https://klimatsmartsemester.se/sites/default/files/metodrapport-klimatsmart-semester-version-1.pdf. P. 8 include a table with data regarding size of the car and type of energy source- bensin, diesel, El, Fossilgas, biogas, etanol and biodisel. 
-
-### The Handbook Emission Factors for Road Transport (HBEFA)
-[HBEFA](https://www.hbefa.net/e/index.html) provides emission factors for all current vehicle categories (PC, LDV, HGV, urban buses, coaches and motor cycles), each divided into different categories, for a wide variety of traffic situations. The emission factors are weighted average values for the countries Germany, Austria, Switzerland, France, Norway and Sweden, and can be accessed [here](https://www.hbefa.net/e/index.html). The Norwegian Environment Agency has also used these emission factors in their calculations. 
 
 ## Design changes
 
