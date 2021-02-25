@@ -37,7 +37,6 @@ app.config['SECRET_KEY'] = 'MLXH243GssUWwKdTWS7FDhdwYF56wPj8'
 Bootstrap(app)
 
 # the name of the database; add path if necessary
-
 app.config['SQLALCHEMY_BINDS'] = {
     "db1":DB_VAR,
     "db2":OUT_DB_VAR}
@@ -63,7 +62,7 @@ class Emissions(db.Model):
     transport = db.Column(db.String)
     fuel = db.Column(db.String)
     date = db.Column(db.String)
-    co2= db.Column(db.Float)
+    co2 = db.Column(db.Float)
     user_name= db.Column(db.String)
     updated = db.Column(db.String)
 
@@ -77,7 +76,7 @@ class Emissions(db.Model):
         self.updated = updated
 
 engine_local = create_engine(DB_VAR)
-engine_super =create_engine(OUT_DB_VAR)
+engine_super = create_engine(OUT_DB_VAR)
 
 
 ### SupeUser DB
@@ -86,7 +85,7 @@ class SuperUser(UserMixin,db.Model):
     __bind_key__= "db2"
     id = db.Column(db.Integer, primary_key=True)
     student = db.Column(db.String)
-    user_name= db.Column(db.Integer)
+    user_name = db.Column(db.Integer)
     password = db.Column(db.String)
     group_name= db.Column(db.String)
 
@@ -94,18 +93,17 @@ class SuperUser(UserMixin,db.Model):
         self.user_name = user_name
 
 ####Everything is recorded. nothing removed
-
 class SuperBackUp(db.Model):
     __tablename__= 'backup'
-    __bind_key__="db2"
+    __bind_key__= "db2"
 
     id = db.Column(db.Integer, primary_key=True)
     kms = db.Column(db.Float)
     transport = db.Column(db.String)
     fuel = db.Column(db.String)
     date = db.Column(db.String)
-    co2= db.Column(db.Float)
-    user_name= db.Column(db.String)
+    co2 = db.Column(db.Float)
+    user_name = db.Column(db.String)
     updated = db.Column(db.String)
 
     def __init__(self, kms, transport, fuel, date, co2, user_name, updated):
@@ -118,7 +116,6 @@ class SuperBackUp(db.Model):
         self.updated = updated
 
 ###Global DB dynamically updated from sessions.
-
 class SuperGlobal(db.Model):
     __tablename__= 'global'
     __bind_key__="db2"
@@ -150,7 +147,7 @@ def before_first_request():
 # forms with Flask-WTF
 
 class LoginRecord(FlaskForm):
-    user= StringField("User",validators=[InputRequired()])
+    user = StringField("User",validators=[InputRequired()])
 
     password = PasswordField('Password', validators=[DataRequired()])
 
@@ -166,16 +163,18 @@ class AddRecord(FlaskForm):
   transport_type = SelectField("Type of transport",
                                 [InputRequired()],
                                 choices=[
-                                        ('Bus', 'Bus'),
-                                        ('Car', 'Car'),
-                                        ('Plane', 'Plane'),
-                                        ('Ferry', 'Ferry'),
-                                        ('Scooter', 'E-Scooter'),
-                                        ('Bicycle', 'Bicycle'),
-                                        ('Motorbike',"Motorbike"),
-                                        ('Walk', 'Walk')
+                                    ('Walk', 'Walk'),
+                                    ('Bicycle', 'Bicycle'),
+                                    ('Scooter', 'E-scooter'),
+                                    ('Motorbike', "Motorbike"),
+                                    ('Car', 'Car (passenger)'),
+                                    ('LDV', 'Light duty vehicle (weight <= 3,5 Tons)'),
+                                    ('HDV', 'Heavy duty vehicle (weight > 3,5 Tons)'),
+                                    ('Bus', 'Bus'),  # transit/urban bus for short-distance
+                                    ('Coach', 'Coach'),  # intercity bus for long-distance
+                                    ('Ferry', 'Ferry'),
+                                    ('Plane', 'Plane')
                                     ])
-
 
   fuel_type = SelectField("Fuel type",
                            validators=[InputRequired()],choices=[])
