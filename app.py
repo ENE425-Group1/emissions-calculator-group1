@@ -167,7 +167,7 @@ class AddRecord(FlaskForm):
                                     ('Bicycle', 'Bicycle'),
                                     ('Scooter', 'E-scooter'),
                                     ('Motorbike', "Motorbike"),
-                                    ('Car', 'Car (passenger)'),
+                                    ('Car', 'Car'),
                                     ('LDV', 'Light duty vehicle (weight <= 3,5 Tons)'),
                                     ('HDV', 'Heavy duty vehicle (weight > 3,5 Tons)'),
                                     ('Bus', 'Bus'),  # transit/urban bus for short-distance
