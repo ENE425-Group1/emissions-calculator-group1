@@ -19,24 +19,19 @@ Emissions per Transport List
   <div class="row pb-5">
     <div class="col-md-10 col-lg-10 mx-lg-auto mx-md-auto">
 
-      <h1 class="pt-5 pb-2">List of Transport</h1>
-	
+      <h1 class="pt-5 pb-2">List of transportation emissions</h1>
 		{% if transport %}
-
 	  <!-- the form was submitted and message exists -->
 			<p class="lead alert alert-warning">This is a list of all
 			<strong>{{ transport }}</strong> records in inventory.</p>
-
   		{% else %}
-
-		  <p class="lead alert alert-warning">This is the list of all records in inventory.</p>
-		  <p>Select the records for the type of transport of your choice:</p>
-		      <ul>
+		  <p class="lead alert alert-warning">This is the list of all records in inventory. Filter records by transport type: 
+	    	  	<ul>
 			  {% for s in transport %}
 			  <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
 			  {% endfor %}
 		      </ul>
-
+	    	  </p>		   
   		{% endif %}
 
 	  <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
@@ -44,10 +39,10 @@ Emissions per Transport List
 		<table class="table">
 			<tr>
 				<th>Kilometers</th>
-				<th>Transport Type</th>
-				<th>Fuel Type</th>
+				<th>Transport type</th>
+				<th>Fuel type</th>
 				<th>Date</th>
-				<th>CO2 kg/passenger km</th>
+				<th>CO2 kg/km</th>
 				<th>User</th>
 				<th>Updated</th>
 			</tr>
