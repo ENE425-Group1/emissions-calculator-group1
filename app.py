@@ -64,17 +64,15 @@ class Emissions(db.Model):
     fuel = db.Column(db.String)
     date = db.Column(db.String)
     co2= db.Column(db.Float)
-    ch4= db.Column(db.Float)
     user_name= db.Column(db.String)
     updated = db.Column(db.String)
 
-    def __init__(self, kms, transport, fuel, date, co2, ch4, user_name, updated):
+    def __init__(self, kms, transport, fuel, date, co2, user_name, updated):
         self.kms = kms
         self.transport = transport
         self.fuel = fuel
         self.date = date
         self.co2 = co2
-        self.ch4 = ch4
         self.user_name = user_name
         self.updated = updated
 
@@ -93,7 +91,7 @@ class SuperUser(UserMixin,db.Model):
     group_name= db.Column(db.String)
 
     def __init__(self, user_name):
-        self.user_name= user_name
+        self.user_name = user_name
 
 ####Everything is recorded. nothing removed
 
@@ -107,17 +105,15 @@ class SuperBackUp(db.Model):
     fuel = db.Column(db.String)
     date = db.Column(db.String)
     co2= db.Column(db.Float)
-    ch4= db.Column(db.Float)
     user_name= db.Column(db.String)
     updated = db.Column(db.String)
 
-    def __init__(self, kms, transport, fuel, date, co2, ch4, user_name, updated):
+    def __init__(self, kms, transport, fuel, date, co2, user_name, updated):
         self.kms = kms
         self.transport = transport
         self.fuel = fuel
         self.date = date
         self.co2 = co2
-        self.ch4 = ch4
         self.user_name = user_name
         self.updated = updated
 
@@ -133,18 +129,16 @@ class SuperGlobal(db.Model):
     fuel = db.Column(db.String)
     date = db.Column(db.String)
     co2= db.Column(db.Float)
-    ch4= db.Column(db.Float)
     user_name= db.Column(db.String)
     updated = db.Column(db.String)
     group_name = db.Column(db.String)
 
-    def __init__(self, kms, transport, fuel, date, co2, ch4, user_name, updated, group_name):
+    def __init__(self, kms, transport, fuel, date, co2, user_name, updated, group_name):
         self.kms = kms
         self.transport = transport
         self.fuel = fuel
         self.date = date
         self.co2 = co2
-        self.ch4 = ch4
         self.user_name = user_name
         self.updated = updated
         self.group_name = group_name
@@ -201,18 +195,17 @@ class AddRecord(FlaskForm):
 
 ##Emissions factor per transport in kg per passemger km
 ##++++++++++++++++++++++
-efco2={"Walk":{"No Fossil Fuel":0},
-       "Bicycle":{"No Fossil Fuel":0},
-       "Scooter":{"No Fossil Fuel":0},
-       "Motorbike":{"Petrol":0.091568,"No Fossil Fuel":0},
-       "Car":{"Petrol":0.134603,"Diesel":0.138526,"No Fossil Fuel":0},
-       "LDV":{"Petrol":0.150778,"Diesel":0.177546,"No Fossil Fuel":0},
-       "HDV":{"Petrol":0.572078,"Diesel":1.113401,"No Fossil Fuel":0},
-       "Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
-       "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
-       "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},
-       "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0}
-       }
+efco2 = {"Walk":{"No Fossil Fuel":0},
+         "Bicycle":{"No Fossil Fuel":0},
+         "Scooter":{"No Fossil Fuel":0},
+         "Motorbike":{"Petrol":0.091568,"No Fossil Fuel":0},
+         "Car":{"Petrol":0.134603,"Diesel":0.138526,"No Fossil Fuel":0},
+         "LDV":{"Petrol":0.150778,"Diesel":0.177546,"No Fossil Fuel":0},
+         "HDV":{"Petrol":0.572078,"Diesel":1.113401,"No Fossil Fuel":0},
+         "Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
+         "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
+         "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},
+         "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0}}
 
 #+++++++++++++++++++++++
 
