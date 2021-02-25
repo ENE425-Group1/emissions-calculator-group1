@@ -212,14 +212,14 @@ efco2={"Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
        "Bicycle":{"No Fossil Fuel":0},
        "Walk":{"No Fossil Fuel":0}}
 
-#efch4={"Bus":{"Diesel":2e-5,"CNG":2.5e-3,"Petrol":2e-5,"No Fossil Fuel":0},
-#       "Car":{"Hybrid":1.5e-4,"Petrol":3.1e-4,"Diesel":3e-6,"No Fossil Fuel":0},
-#       "Plane":{"Jet Fuel":1.1e-4,"No Fossil Fuel":0},
-#       "Ferry":{"DO":3e-5,"HFO":3e-5,"No Fossil Fuel":0},
-#       "Motorbike":{"Petrol":2.1e-3,"No Fossil Fuel":0},
-#       "Scooter":{"No Fossil Fuel":0},
-#       "Bicycle":{"No Fossil Fuel":0},
-#       "Walk":{"No Fossil Fuel":0}}
+efch4={"Bus":{"Diesel":2e-5,"CNG":2.5e-3,"Petrol":2e-5,"No Fossil Fuel":0},
+       "Car":{"Hybrid":1.5e-4,"Petrol":3.1e-4,"Diesel":3e-6,"No Fossil Fuel":0},
+       "Plane":{"Jet Fuel":1.1e-4,"No Fossil Fuel":0},
+       "Ferry":{"DO":3e-5,"HFO":3e-5,"No Fossil Fuel":0},
+       "Motorbike":{"Petrol":2.1e-3,"No Fossil Fuel":0},
+       "Scooter":{"No Fossil Fuel":0},
+       "Bicycle":{"No Fossil Fuel":0},
+       "Walk":{"No Fossil Fuel":0}}
 
 #+++++++++++++++++++++++
 
@@ -350,10 +350,10 @@ def add_record():
         
         if gas=="":     
             co2=float(kms)*efco2[transport][fuel]
-            #ch4=float(kms)*efch4[transport][fuel]
+            ch4=float(kms)*efch4[transport][fuel]
         else:
             co2=float(kms)*float(gas) 
-            #ch4=float(kms)*efch4[transport][fuel]
+            ch4=float(kms)*efch4[transport][fuel]
             
         user=SuperUser.query.filter_by(id=current_user.user_name).first()
         
