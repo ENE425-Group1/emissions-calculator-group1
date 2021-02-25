@@ -30,16 +30,13 @@
             select_record.html
 
 ## Methodology Research
-#### This section is for research on relevant methods for calculating emissions from transportation. The selected method is described below:
+#### This section is for research on relevant methods for calculating emissions from transportation. Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). The selected method for the group's app is described below:
 
 #### Conversion Factors for Greenhouse Gas Reporting
 [Here](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/891105/Conversion_Factors_2020_-_Condensed_set__for_most_users_.xlsx) are the conversion factors used by UK and international organisations to report on 2020 greenhouse gas emissions. For instance, one can find how many kilograms of CO2 emissions the different car types
 
 [The UK Government greenhouse gas conversion factors](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/901692/conversion-factors-2020-methodology.pdf) also include detailed information about average emissions of cars (page 54), buses (p. 60), motorcycles (p. 61), rail (p.64) and aviation (p.76-78 and 81/82). It is distinguished between fuel types and even different brands.
 Developed out of this data, this [site](https://ourworldindata.org/travel-carbon-footprint) shows the carbon footprint per person per km with different means of transport.
-
-#### Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). 
-
 
 ## Design changes
 
