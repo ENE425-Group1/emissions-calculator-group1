@@ -172,17 +172,14 @@ class AddRecord(FlaskForm):
   transport_type = SelectField("Type of Transport",
                                 [InputRequired()],
                                 choices=[
-                                        ('Walk', 'Walk'),
-                                        ('Bicycle', 'Bicycle'),
-                                        ('Scooter','E-scooter'),
-                                        ('Motorbike', "Motorbike"),
-                                        ('Car', 'Car (passenger)'),
-                                        ('LDV','Light duty vehicle (weight <= 3,5 Tons)'),
-                                        ('HDV', 'Heavy duty vehicle (weight > 3,5 Tons)'),
-                                        ('Bus', 'Bus'),  # transit/urban bus for short-distance
-                                        ('Coach', 'Coach'),  # intercity bus for long-distance
+                                        ('Bus', 'Bus'),
+                                        ('Car', 'Car'),
+                                        ('Plane', 'Plane'),
                                         ('Ferry', 'Ferry'),
-                                        ('Plane', 'Plane')
+                                        ('Scooter', 'E-Scooter'),
+                                        ('Bicycle', 'Bicycle'),
+                                        ('Motorbike',"Motorbike"),
+                                        ('Walk', 'Walk')
                                     ])
   
 
@@ -200,14 +197,11 @@ class AddRecord(FlaskForm):
 
 ##Emissions factor per transport in kg per passemger km
 ##++++++++++++++++++++++
-efco2={"Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
-       "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
-       "Car":{"Petrol":0.134603,"Diesel":0.138526,"No Fossil Fuel":0},
-       "LDV":{"Petrol":0.150778,"Diesel":0.177546,"No Fossil Fuel":0},
-       "HDV":{"Petrol":0.572078,"Diesel":1.113401,"No Fossil Fuel":0},
+efco2={"Bus":{"Diesel":0.10231,"CNG":0.08,"Petrol":0.10231,"No Fossil Fuel":0},
+       "Car":{"Hybrid":0.10567,"Petrol":0.18592,"Diesel":0.16453,"No Fossil Fuel":0},
        "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0},
        "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},
-       "Motorbike":{"Petrol":0.091568,"No Fossil Fuel":0},
+       "Motorbike":{"Petrol":0.09816,"No Fossil Fuel":0},
        "Scooter":{"No Fossil Fuel":0},
        "Bicycle":{"No Fossil Fuel":0},
        "Walk":{"No Fossil Fuel":0}}
@@ -258,7 +252,7 @@ def login():
             session.pop('_flashes', None) 
             return (redirect(url_for("index")))
         else:
-        # if password is incorrect , redirect to login page
+        # if password is in correct , redirect to login page
             message = "User or password incorrect "
             
             return render_template('login.html', formlog=formlog, message=message)
