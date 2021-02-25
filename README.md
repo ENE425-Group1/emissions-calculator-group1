@@ -30,7 +30,20 @@
             select_record.html
 
 ## Methodology Research
-#### This section is for research on relevant methods for calculating emissions from transportation. Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). The original method used for the app is based on the "UK Government greenhouse gas conversion factors".
+#### This section is for research on relevant methods for calculating emissions from transportation. Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). 
+
+### Selected methodology
+The original method for the app is based on the emission factors from "The UK Government greenhouse gas conversion factors". Alternatively, we can use the emission factors for transport vehicles from "HBEFA", which is calculated specifically for Norway. The app.py file has been changed to include the emission factors from "BEFA" for all road vehicles, while emission factors for "planes" and "ferries" are taken from "The UK government report". The backup.py file has the original Python file, which uses all emission factors from "The UK Government report".     
+
+#### HBEFA
+
+The Handbook Emission Factors for Road Transport (HBEFA) provides emission factors for all current vehicle categories (PC, LDV, HGV, urban buses, coaches and motor cycles), each divided into different categories, for a wide variety of traffic situations. Emission factors for all regulated and the most important non-regulated pollutants as well as fuel/energy consumption and CO2 are included.
+
+[Webpage](https://www.hbefa.net/e/index.html)
+[Emission factors](https://www.hbefa.net/e/index.html)
+[About (wiki)](https://en.wikipedia.org/wiki/Handbook_Emission_Factors_for_Road_Transport_(HBEFA)#Vehicle_category)
+[About (presentation)](https://www.epd.gov.hk/epd/sites/default/files/epd/english/environmentinhk/air/guide_ref/files/HBEFA_COPERT.pdf)
+
 
 #### Conversion Factors for Greenhouse Gas Reporting by the UK Government
 [Here](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/891105/Conversion_Factors_2020_-_Condensed_set__for_most_users_.xlsx) are the conversion factors used by UK and international organisations to report on 2020 greenhouse gas emissions. For instance, one can find how many kilograms of CO2 emissions the different car types. [The UK Government greenhouse gas conversion factors](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/901692/conversion-factors-2020-methodology.pdf) also include detailed information about average emissions of cars (page 54), buses (p. 60), motorcycles (p. 61), rail (p.64) and aviation (p.76-78 and 81/82). It is distinguished between fuel types and even different brands. Developed out of this data, this [site](https://ourworldindata.org/travel-carbon-footprint) shows the carbon footprint per person per km with different means of transport.
