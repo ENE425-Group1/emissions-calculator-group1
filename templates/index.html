@@ -26,14 +26,7 @@ Emissions Record ENE425
 
       <p class="lead">Welcome {{user_rec}}</p>
 
-      <p></p>
-	    <p><a href="{{ url_for('add_record') }}">Submit a new record</a>.</p>
-      <p>Select the records for the type of transport of your choice:</p>
-      <ul>
-          {% for s in transport %}
-          <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
-          {% endfor %}
-      </ul>
+      <p><a href="{{ url_for('add_record') }}">Submit a new record</a>.</p>
       <p><a href="{{ url_for('inventory_all') }}">Check</a> or <a href="{{ url_for('download') }}">Download</a> <strong>All</strong> records.</p>
       <p><a href="{{ url_for('select_record') }}">Select a record for editing</a>.</p>
       <p><a href="{{ url_for('logout') }}">Logout</a></p>
