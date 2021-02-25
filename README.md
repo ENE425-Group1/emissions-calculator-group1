@@ -30,9 +30,9 @@
             select_record.html
 
 ## Methodology Research
-#### This section is for research on relevant methods for calculating emissions from transportation. Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). The selected method for the group's app is described below:
+#### This section is for research on relevant methods for calculating emissions from transportation. Document with all the methodologies previously researced by Group 1 can be found [here](https://docs.google.com/document/d/1lYmhqOsNPrKsHHmqBDZx6apvHNXIWH4zdgCUNXkfTMw/edit?usp=sharing). The original method used for the app is based on the "UK Government greenhouse gas conversion factors", which is described below. 
 
-#### Conversion Factors for Greenhouse Gas Reporting
+#### Conversion Factors for Greenhouse Gas Reporting by the UK Government
 [Here](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/891105/Conversion_Factors_2020_-_Condensed_set__for_most_users_.xlsx) are the conversion factors used by UK and international organisations to report on 2020 greenhouse gas emissions. For instance, one can find how many kilograms of CO2 emissions the different car types
 
 [The UK Government greenhouse gas conversion factors](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/901692/conversion-factors-2020-methodology.pdf) also include detailed information about average emissions of cars (page 54), buses (p. 60), motorcycles (p. 61), rail (p.64) and aviation (p.76-78 and 81/82). It is distinguished between fuel types and even different brands.
