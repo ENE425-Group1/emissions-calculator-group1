@@ -1,7 +1,6 @@
 {% extends 'bootstrap/base.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-
 {% block styles %}
 {{ super() }}
 	<style>
@@ -78,6 +77,15 @@
 	<link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
+<div class="topnav" id="myTopnav">
+	  <a href="{{ url_for('index') }}" class="active">Home</a>
+	  <a href="{{ url_for('add_record') }}">Add record</a>
+	  <a href="{{ url_for('inventory_all') }}">View records</a>
+	  <a href="{{ url_for('select_record') }}">Edit records</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <i class="fa fa-bars"></i>
+	  </a>
+</div>
 
 {% block title %}
 	{% if choice == 'delete' %}
@@ -89,16 +97,6 @@
 
 
 {% block content %}
-
-<div class="topnav" id="myTopnav">
-	  <a href="{{ url_for('index') }}" class="active">Home</a>
-	  <a href="{{ url_for('add_record') }}">Add record</a>
-	  <a href="{{ url_for('inventory_all') }}">View records</a>
-	  <a href="{{ url_for('select_record') }}">Edit records</a>
-	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-	    <i class="fa fa-bars"></i>
-	  </a>
-</div>
 
 <div class="container">
   <div class="row pb-5">
@@ -210,7 +208,7 @@
 			}
 		}
 		</script>
-		
+
 		<script>
 		let transport_select =document.getElementById("transport_type");
 		let fuel_select = document.getElementById("fuel_type");
