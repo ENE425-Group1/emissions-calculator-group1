@@ -85,7 +85,7 @@ Add a Record
 {% block content %}
 
 <div class="topnav" id="myTopnav">
-	  <a href="#home" class="active">Home</a>
+	  <a href="{{ url_for('index') }}" class="active">Home</a>
 	  <a href="{{ url_for('add_record') }}">Add record</a>
 	  <a href="{{ url_for('inventory_all') }}">View records</a>
 	  <a href="{{ url_for('select_record') }}">Edit records</a>
