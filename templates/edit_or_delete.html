@@ -23,6 +23,7 @@
 		 a:hover {
 		color: #FFFFFF;
 		}
+
 		/* Top navigation bar styling */
 
 		.topnav {
@@ -90,7 +91,7 @@
 {% block content %}
 
 <div class="topnav" id="myTopnav">
-	  <a href="#home" class="active">Home</a>
+	  <a href="{{ url_for('index') }}" class="active">Home</a>
 	  <a href="{{ url_for('add_record') }}">Add record</a>
 	  <a href="{{ url_for('inventory_all') }}">View records</a>
 	  <a href="{{ url_for('select_record') }}">Edit records</a>
@@ -200,6 +201,17 @@
 		</form>
 
 		<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}
+		</script>
+		
+		<script>
 		let transport_select =document.getElementById("transport_type");
 		let fuel_select = document.getElementById("fuel_type");
 
@@ -222,16 +234,6 @@
 		// without this, the current value is not shown in the menu
 		if ( document.querySelector('select') ) {
 			document.querySelector('select').value = "{{ emissions.transport }}";
-		}
-		</script>
-		<script>
-		function myFunction() {
-			var x = document.getElementById("myTopnav");
-			if (x.className === "topnav") {
-				x.className += " responsive";
-			} else {
-				x.className = "topnav";
-			}
 		}
 		</script>
 		{% endif %}
