@@ -3,16 +3,10 @@
 {% block styles %}
 {{ super() }}
 <style>
-	body { 
-	    background: #cde4da;
-	    font-size:18px;
-	}
-	.records {
-		margin-top: 1cm;
-	}
-	
 </style>
 <link rel="icon" type="image/png" href="static/favicon.png">
+<link rel="external stylesheet" href="styling.css">
+<link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block title %}
@@ -30,7 +24,7 @@ Emissions Record ENE425
       <h2 class="pt-5 pb-2">Emissions Calculator for ENE425. Group 1</h2>
 
       <p class="lead">Welcome {{user_rec}}</p>
-      <p class="lead alert alert-primary"><a href="{{ url_for('add_record') }}">Calculate your transport emissions</a></p>	
+      <p class="lead alert alert-primary"><a href="{{ url_for('add_record') }}">Calculate your transport emissions</a></p>
       <p class="records">View emission records:</p>
       <ul>
 	  <li><a href="{{ url_for('inventory_all') }}">All records</a></li>
@@ -38,7 +32,7 @@ Emissions Record ENE425
           <li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
           {% endfor %}
       </ul>
-	    <p><a href="{{ url_for('download') }}">Download all emission records</a></p> 
+	    <p><a href="{{ url_for('download') }}">Download all emission records</a></p>
 	    <p><a href="{{ url_for('select_record') }}">Edit emission records</a>.</p>
 	    <p><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
@@ -48,8 +42,27 @@ Emissions Record ENE425
 <html>
     <head>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+			<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+			    x.className += " responsive";
+			  } else {
+			    x.className = "topnav";
+			  }
+			}
+			</script>
     </head>
     <body>
+			 <div class="topnav" id="myTopnav">
+				  <a href="#home" class="active">Home</a>
+				  <a href="{{ url_for('add_record') }}">Add record</a>
+				  <a href="{{ url_for('inventory_all') }}">View records</a>
+				  <a href="{{ url_for('select_record') }}">Edit records</a>
+				  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				    <i class="fa fa-bars"></i>
+				  </a>
+		  </div>
       <div class="container">
         <div class="row d-flex flex-row">
           <div class="col-lg-6">{{plot_div|safe}}</div>
