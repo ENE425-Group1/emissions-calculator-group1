@@ -5,7 +5,7 @@
 <style>
 </style>
 <link rel="icon" type="image/png" href="static/favicon.png">
-<link rel="external stylesheet" href="templates/styling.css">
+<link rel="external stylesheet" href="https://raw.githubusercontent.com/ENE425-Group1/emissions-calculator-group1/main/templates/styling.css">
 <link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
@@ -16,7 +16,15 @@ Emissions Record ENE425
 {% block content %}
 
 <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
-
+<div class="topnav" id="myTopnav">
+	  <a href="#home" class="active">Home</a>
+	  <a href="{{ url_for('add_record') }}">Add record</a>
+	  <a href="{{ url_for('inventory_all') }}">View records</a>
+	  <a href="{{ url_for('select_record') }}">Edit records</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <i class="fa fa-bars"></i>
+	  </a>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
@@ -42,27 +50,18 @@ Emissions Record ENE425
 <html>
     <head>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-			<script>
-			function myFunction() {
-			  var x = document.getElementById("myTopnav");
-			  if (x.className === "topnav") {
-			    x.className += " responsive";
-			  } else {
-			    x.className = "topnav";
-			  }
-			}
-			</script>
+      <script>
+	function myFunction() {
+	  var x = document.getElementById("myTopnav");
+	  if (x.className === "topnav") {
+	    x.className += " responsive";
+	  } else {
+	    x.className = "topnav";
+	  }
+	}
+      </script>
     </head>
     <body>
-			 <div class="topnav" id="myTopnav">
-				  <a href="#home" class="active">Home</a>
-				  <a href="{{ url_for('add_record') }}">Add record</a>
-				  <a href="{{ url_for('inventory_all') }}">View records</a>
-				  <a href="{{ url_for('select_record') }}">Edit records</a>
-				  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-				    <i class="fa fa-bars"></i>
-				  </a>
-		  </div>
       <div class="container">
         <div class="row d-flex flex-row">
           <div class="col-lg-6">{{plot_div|safe}}</div>
