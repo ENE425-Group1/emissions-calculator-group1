@@ -25,7 +25,7 @@
 
 	.topnav {
 	  overflow: hidden;
-	  background-color: #181818;
+	  background-color: #121212;
 	}
 	.topnav a {
 	  float: left;
@@ -41,7 +41,7 @@
 	  color: black;
 	}
 	.topnav a.active {
-	  background-color: #4CAF50;
+	  background-color: #196432;
 	  color: white;
 	}
 	.topnav .icon {
@@ -96,11 +96,12 @@ Emissions Record ENE425
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
 
-      <h2 class="pt-5 pb-2">Emissions Calculator for ENE425. Group 1</h2>
+      <h2 class="pt-5 pb-2">Calculate your transport emissions</h2>
 
       <p class="lead">Welcome {{user_rec}}</p>
-      <p class="lead alert alert-primary"><a href="{{ url_for('add_record') }}">Calculate your transport emissions</a></p>
-			<br></br><br></br>
+			<br></br>
+      <p class="lead alert alert-primary"><a href="{{ url_for('add_record') }}">Add record</a></p>
+			<br></br>
       <p class="records">View emission records:</p>
       <ul>
 	  <li><a href="{{ url_for('inventory_all') }}">All records</a></li>
