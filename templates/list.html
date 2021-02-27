@@ -77,6 +77,13 @@
 	<link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
+{% block title %}
+Emissions per Transport List
+{% endblock %}
+
+
+{% block content %}
+
 <div class="topnav" id="myTopnav">
 	  <a href="{{ url_for('index') }}" class="active">Home</a>
 	  <a href="{{ url_for('add_record') }}">Add record</a>
@@ -86,13 +93,6 @@
 	    <i class="fa fa-bars"></i>
 	  </a>
 </div>
-
-{% block title %}
-Emissions per Transport List
-{% endblock %}
-
-
-{% block content %}
 
 <div class="container">
   <div class="row pb-5">
