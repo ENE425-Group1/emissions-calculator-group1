@@ -102,6 +102,7 @@ Emissions per Transport List
 	    <i class="fa fa-bars"></i>
 	  </a>
 </div>
+
 <ul>
 			{% for s in transport %}
 			<li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
