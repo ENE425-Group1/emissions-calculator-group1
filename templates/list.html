@@ -108,11 +108,7 @@ Emissions per Transport List
     <div class="col-md-10 col-lg-10 mx-lg-auto mx-md-auto">
 
       <h1 class="pt-5 pb-2">Emission records</h1>
-			<ul>
-			{% for s in transport %}
-			<li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
-			{% endfor %}
-			</ul>
+
 		{% if transport %}
 	  <!-- the form was submitted and message exists -->
 			<p>This is the list of all
