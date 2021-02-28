@@ -70,8 +70,9 @@ margin-right: -40px;
 	    text-align: left;
 	  }
 	}
-	.button
+	.button {
 		background-color: #196432;
+		font-weight: bold;
 		border: none;
 		color: white;
 		margin-left: 25%;
@@ -84,7 +85,7 @@ margin-right: -40px;
 		margin: 4px 2px;
 		cursor: pointer;
 	}
-	.logout {
+	#logout {
 		color:red
 	}
 </style>
@@ -113,9 +114,9 @@ Emissions Record ENE425
     <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
 			<br>
 			<p class="lead">Welcome {{user_rec}}</p>
-			<br></br>
+			<br>
       <h1 class="pt-5 pb-2">Calculate your transport emissions</h1>
-			<button class="button"><a href="{{ url_for('add_record') }}">Add record</a></button>
+			<a class="button" href="{{ url_for('add_record') }}">Add new record</a>
 			<br></br>
 	    <p id="logout"><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
