@@ -72,11 +72,14 @@ Question 1. What other cloud service can be used to deploy apps from github repo
 
 [Azure](https://azure.microsoft.com/en-us/free/search/?&ef_id=Cj0KCQiA4L2BBhCvARIsAO0SBdZmo_X3KZDPWmbj9okoBFuotwwPaxNOZVrtfouGt3bq-pfrAxJC9YMaAnugEALw_wcB:G:s&OCID=AID2100088_SEM_Cj0KCQiA4L2BBhCvARIsAO0SBdZmo_X3KZDPWmbj9okoBFuotwwPaxNOZVrtfouGt3bq-pfrAxJC9YMaAnugEALw_wcB:G:s) is Microsoft's own cloud solution (public cloud) and web portal and enables continuous deployment from GitHub.
 
-- [Amazon Web Services (AWS)](https://aws.amazon.com/) is Amazon’s cloud platform. It is said to be the most comprehensive and adopted cloud platform. AWS can be used to deploy apps from GitHub repositories’. 
+- [Amazon Web Services (AWS)](https://aws.amazon.com/) is Amazon’s cloud platform. It is said to be the most comprehensive and adopted cloud platform. AWS can be used to deploy apps from GitHub repositories. 
 
-- [Google Cloud Platform (GCP)](https://cloud.google.com/) is offered by Google and runs the same infrastructure that Google uses internally for its end-user products. GCP allows continuous deployment from GitHub repository. 
+- [Google Cloud Platform (GCP)](https://cloud.google.com/) is offered by Google and runs the same infrastructure that Google uses internally for its end-user products. GCP allows continuous deployment from GitHub repositories. 
 
 
 Question 2. What options would you consider to make your app safer against attacks? (Attacks examples: Abusive requests that could crash your server; password theft)
 
 - To avoid a crash in our server due bots attacks, we could implement a CAPTCHAs on our Website to have a "I'm not a robot" check. With this solution only humans would be able to use/login our website, for example through an imagen selection test. 
+- To avoid password theft, the app can require Two-Factor Authentication to log in to the app. Two-Factor Authentication is a method of access control where a user is only given access after presenting two separate proofs of their identity, such as e-mail, SMS, etc. This can also be extended to three or more proofs of identity.
+- For extreme security, user login may be integrated with Bank-ID. However, this will be limited to Norwegian users of the app.  
+- Distributed Denial of Service (DDoS) attacks is when many different servers try to load the login/home page of the app simultaneously, causing it to eventually crash. To avoid this problem, the app should implement a early threat detection and traffic profiling systems. Another way to avoid this problem is to secure our network infrastructure, including advanced intrusion prevention and threat management systems, which combine firewalls, VPN, anti-spam, content filtering and load balancing. 
