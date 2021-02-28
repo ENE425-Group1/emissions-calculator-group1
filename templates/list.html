@@ -119,6 +119,9 @@ Emissions per Transport List
 				{% for s in transport %}
 				<a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a>
 				{% endfor %}
+				<br>
+				<a id="data_button" class="page_button" href="{{ url_for('download') }}">Download all records</a>
+				<br>
 				</div>
   		{% endif %}
 
