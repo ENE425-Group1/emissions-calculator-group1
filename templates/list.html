@@ -109,13 +109,17 @@ Emissions per Transport List
 
       <h1 class="pt-5 pb-2">Emission records</h1>
 
-		{% if transport %}
-	  <!-- the form was submitted and message exists -->
+			{% if transport %}
+		  <!-- the form was submitted and message exists -->
 			<p>This is the list of all
 			<strong>{{ transport }}</strong> records in inventory.</p>
   		{% else %}
-			<p>This is the list of all records in inventory.</p>
-
+				<div>
+				<p>This is the list of all records in inventory.</p>
+				{% for s in transport %}
+				<a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a>
+				{% endfor %}
+				</div>
   		{% endif %}
 
 		<table class="table">
