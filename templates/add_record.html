@@ -22,8 +22,6 @@
 		 a:hover {
 		color: #FFFFFF;
 		}
-		/* Top navigation bar styling */
-
 		.topnav {
 			overflow: hidden;
 			background-color: #121212;
@@ -79,15 +77,15 @@
 
 
 {% block title %}
-Add a Record
+Add a record
 {% endblock %}
 
 
 {% block content %}
 
 <div class="topnav" id="myTopnav">
-	  <a href="{{ url_for('index') }}" class="active">Home</a>
-	  <a href="{{ url_for('add_record') }}">Add record</a>
+	  <a href="{{ url_for('index') }}">Home</a>
+	  <a href="{{ url_for('add_record') }}" class="active">Add record</a>
 	  <a href="{{ url_for('inventory_all') }}">View records</a>
 	  <a href="{{ url_for('select_record') }}">Edit records</a>
 	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -99,7 +97,7 @@ Add a Record
 	<div class="row pb-5">
 		<div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
 
-		<h1 class="pt-5 pb-2">Add a New Record</h1>
+		<h1 class="pt-5 pb-2">Add a new record</h1>
 
 		{% if message %}
 
@@ -115,9 +113,7 @@ Add a Record
 
 			<!-- the form is displayed when template opens via GET not POST -->
 
-			<p class="lead alert alert-primary">Add a new record to the inventory.</p>
-
-			<p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
+			<p>Add a new record to the inventory.</p>
 
 			<!-- show flash - based on WTForms validators
 				 see https://pythonprogramming.net/flash-flask-tutorial/
