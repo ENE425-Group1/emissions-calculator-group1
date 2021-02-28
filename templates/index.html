@@ -115,7 +115,6 @@ margin-right: -40px;
 		}
 	}
 	.button {
-		background-color: #196432;
 		font-weight: bold;
 		border: none;
 		color: white;
@@ -129,8 +128,14 @@ margin-right: -40px;
 		margin: 4px 2px;
 		cursor: pointer;
 	}
-	#logout {
-		color:red
+	# record_button {
+		background-color: #196432;
+	}
+	# data_button {
+		background-color: #6a0dad;
+	}
+	#logout a {
+		color: #b23b3b;
 	}
 </style>
 <link rel="icon" type="image/png" href="static/favicon.png">
@@ -152,10 +157,7 @@ Emissions Record ENE425
 				 <i class="fa fa-caret-down"></i>
 			 </button>
 		   <div class="dropdown-content">
-						<a href={{ url_for('inventory_all') }}">All</a>
-						{% for s in transport %}
-						<a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a>
-						{% endfor %}
+						<a href="{{ url_for('inventory_all') }}">All</a>
 			</div>
 		</div>
 	  <a href="{{ url_for('inventory_all') }}">View records</a>
@@ -171,7 +173,8 @@ Emissions Record ENE425
 			<p class="lead">Welcome {{user_rec}}</p>
 			<br>
       <h1 class="pt-5 pb-2">Calculate your transport emissions</h1>
-			<a class="button" href="{{ url_for('add_record') }}">Add new record</a>
+			<a id="record_button" class="button" href="{{ url_for('add_record') }}">Add new record</a>
+			<a id="data_button" class="button" href="{{ url_for('download') }}">Download all records</a>
 			<br></br>
 	    <p id="logout"><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
