@@ -5,12 +5,14 @@
 <style>
 	body {
 	  margin: 0;
-	  font-family: Arial, Helvetica, sans-serif;
+		font-family: 'Courier New',Courier,monospace;
 	  background-color: #181818;
 	  font-size:18px;
 	  color: #FFFFFF;
 	}
 	h1, h2, p {
+	font-family: paralucent,sans-serif;
+	font-style: normal;
 	color: #FFFFFF;
 	}
 	a {
@@ -76,27 +78,24 @@
 	  }
 	}
 	.page_button {
+		font-size: 23px;
 		font-weight: bold;
 		border: none;
 		color: white;
 		margin-left: 25%;
-		width:50%;
+		width:100%;
 		padding: 15px 32px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
-		font-size: 16px;
 		margin: 4px 2px;
 		cursor: pointer;
 	}
 	#record_button {
 		background-color: #538D64;
 	}
-	#data_button {
-		background-color: #76415E;
-	}
 	#logout a {
-		color: #b23b3b;
+		color: #76415E;
 	}
 </style>
 
@@ -130,8 +129,7 @@ Emissions Record ENE425
 			<p class="lead">Welcome {{user_rec}}</p>
 			<br>
       <h1 class="pt-5 pb-2">Calculate your transport emissions</h1>
-			<a id="record_button" class="page_button" href="{{ url_for('add_record') }}">Add new record</a>
-			<a id="data_button" class="page_button" href="{{ url_for('download') }}">Download all records</a>
+			<a id="record_button" class="page_button" href="{{ url_for('add_record') }}">Add a new record</a>
 			<br></br>
     </div>
   </div>
