@@ -114,7 +114,7 @@
 			text-align: left;
 		}
 	}
-	.button {
+	.page_button {
 		font-weight: bold;
 		border: none;
 		color: white;
@@ -176,8 +176,8 @@ Emissions Record ENE425
 			<p class="lead">Welcome {{user_rec}}</p>
 			<br>
       <h1 class="pt-5 pb-2">Calculate your transport emissions</h1>
-			<a id="record_button" class="button" href="{{ url_for('add_record') }}">Add new record</a>
-			<a id="data_button" class="button" href="{{ url_for('download') }}">Download all records</a>
+			<a id="record_button" class="page_button" href="{{ url_for('add_record') }}">Add new record</a>
+			<a id="data_button" class="page_button" href="{{ url_for('download') }}">Download all records</a>
 			<br></br>
 	    <p id="logout"><a href="{{ url_for('logout') }}">Logout</a></p>
     </div>
