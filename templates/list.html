@@ -103,12 +103,6 @@ Emissions per Transport List
 	  </a>
 </div>
 
-<ul>
-			{% for s in transport %}
-			<li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
-			{% endfor %}
-</ul>
-
 <div class="container">
   <div class="row pb-5">
     <div class="col-md-10 col-lg-10 mx-lg-auto mx-md-auto">
