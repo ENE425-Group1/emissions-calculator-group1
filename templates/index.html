@@ -39,7 +39,7 @@
 	  text-decoration: none;
 	  font-size: 17px;
 	}
-	.topnav a:hover, , .dropdown:hover .dropbtn {
+	.topnav a:hover, .dropdown:hover .dropbtn {
 	  background-color: #ddd;
 	  color: black;
 	}
@@ -138,6 +138,7 @@
 		color: #b23b3b;
 	}
 </style>
+
 <link rel="icon" type="image/png" href="static/favicon.png">
 <link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
@@ -149,6 +150,7 @@ Emissions Record ENE425
 {% block content %}
 
 <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+
 <div class="topnav" id="myTopnav">
 	  <a href="{{ url_for('index') }}" class="active">Home</a>
 	  <a href="{{ url_for('add_record') }}">Add record</a>
@@ -158,11 +160,15 @@ Emissions Record ENE425
 			 </button>
 		   <div class="dropdown-content">
 						<a href="{{ url_for('inventory_all') }}">All</a>
+						{% for s in transport %}
+						<a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a>
+						{% endfor %}
 			</div>
 		</div>
 	  <a href="{{ url_for('select_record') }}">Edit records</a>
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
