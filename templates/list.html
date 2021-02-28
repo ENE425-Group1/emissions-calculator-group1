@@ -68,10 +68,19 @@
 					text-align: left;
 				}
 			}
-			.alert-primary {
-			background-color: #196432;
-			border-color: #196432;
-			color: #FFFFFF;
+			.button
+			  background-color: #196432;
+			  border: none;
+			  color: white;
+				margin-left: 25%;
+        width:50%;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
 			}
 	</style>
 	<link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -85,28 +94,34 @@ Emissions per Transport List
 {% block content %}
 
 <div class="topnav" id="myTopnav">
-	  <a href="{{ url_for('index') }}" class="active">Home</a>
+	  <a href="{{ url_for('index') }}">Home</a>
 	  <a href="{{ url_for('add_record') }}">Add record</a>
-	  <a href="{{ url_for('inventory_all') }}">View records</a>
+	  <a href="{{ url_for('inventory_all') }}" class="active">View records</a>
 	  <a href="{{ url_for('select_record') }}">Edit records</a>
 	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
 	    <i class="fa fa-bars"></i>
 	  </a>
 </div>
+<ul>
+			{% for s in transport %}
+			<li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
+			{% endfor %}
+</ul>
 
 <div class="container">
   <div class="row pb-5">
     <div class="col-md-10 col-lg-10 mx-lg-auto mx-md-auto">
 
-      <h1 class="pt-5 pb-2">List of transportation emissions</h1>
+      <h1 class="pt-5 pb-2">Emission records</h1>
 		{% if transport %}
 	  <!-- the form was submitted and message exists -->
-			<p class="lead alert alert-warning">This is a list of all
+			<p>This is the list of all
 			<strong>{{ transport }}</strong> records in inventory.</p>
   		{% else %}
-		  <p class="lead alert alert-primary">This is the list of all records in inventory.</p>
+			<button class="button"><a href="{{ url_for('download') }}">Download all emission records</a></button>
+			<p>This is the list of all records in inventory.</p>
+
   		{% endif %}
-	  <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
 
 		<table class="table">
 			<tr>
