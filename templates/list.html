@@ -80,43 +80,12 @@
 				display: block;
 				text-align: left;
 			}
-			.dropbtn {
-	  background-color: #538D64;
-	  color: white;
-	  padding: 16px;
-	  font-size: 16px;
-	  border: none;
-	  cursor: pointer;
-	}
-	.dropbtn:hover, .dropbtn:focus {
-  background-color: #3C6749;
-	}
-
-	.dropdown {
-	  position: relative;
-	  display: inline-block;
-	}
-
-	.dropdown-content {
-	  display: none;
-	  position: absolute;
-	  background-color: #f1f1f1;
-	  min-width: 160px;
-	  overflow: auto;
-	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	  z-index: 1;
-	}
-
-	.dropdown-content a {
-	  color: black;
-	  padding: 12px 16px;
-	  text-decoration: none;
-	  display: block;
-	}
-
-	.dropdown a:hover {background-color: #ddd;}
-
-	.show {display: block;}
+			.data_button {
+				color: #492B78;
+			}
+			.data_button:hover {
+				color: #492B78;
+			}
 	</style>
 	<link rel="topnavbar stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
@@ -145,24 +114,23 @@ Emissions per Transport List
 
       <h1 class="pt-5 pb-2">Emission records</h1>
 
-			<div class="dropdown">
-			  <button onclick="myFunction()" class="dropbtn">Filter emission records by transportation type</button>
-			  <div id="myDropdown" class="dropdown-content">
-			    <a href="{{ url_for('inventory_all') }}">All</a>
+			<div class="filter">
+			  <p>Filter emission records by transportation type:</p>
+			  <ul>
 					{% for s in transport %}
-					<a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a>
+					<li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
 					{% endfor %}
+				</ul>
 			  </div>
 			</div>
 
 			{% if transport %}
 		  <!-- the form was submitted and message exists -->
 			<p>This is the list of all
-			<strong>{{ transport }}</strong> records in inventory.</p>
+			<strong>{{ transport }}</strong> records in inventory. View all records <a class="data_button" href="{{ url_for('inventory_all') }}">here</a></p>
   		{% else %}
 				<div>
-				<p>This is the list of all records in inventory.</p>
-				<a id="data_button" class="page_button" href="{{ url_for('download') }}">Download all records</a>
+				<p>This is the list of all records in inventory. Download all records <a class="data_button" href="{{ url_for('download') }}"> here.</a></p>
 				<br></br>
 				</div>
   		{% endif %}
