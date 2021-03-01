@@ -111,18 +111,21 @@ Emissions per Transport List
 			</div>
 
 			{% if transport %}
-		  <!-- the form was submitted and message exists -->
+		  <!-- the form was submitted and message exists
+			-->
 			<p>This is the list of all
 			<strong>{{ transport }}</strong> records in inventory. View all records <a style="color:#538D64" href="{{ url_for('inventory_all') }}">here</a></p>
   		{% else %}
 				<div>
 				<p>This is the list of all records in inventory. Download all records <a style="color:#538D64" href="{{ url_for('download') }}"> here.</a></p>
 				<p>Filter emission records by transportation type:</p>
+				<!-- fix this:
 			  <ul>
 					{% for s in transport %}
 					<li><a href="{{ url_for( 'inventory', transport=s.transport ) }}">{{ s.transport }}</a></li>
 					{% endfor %}
 				</ul>
+				-->
 				<br></br>
 				</div>
   		{% endif %}
