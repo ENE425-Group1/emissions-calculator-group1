@@ -198,13 +198,13 @@ efco2 = {"Walk":{"No Fossil Fuel":0},
          "Bicycle":{"No Fossil Fuel":0},
          "Scooter":{"No Fossil Fuel":0},
          "Motorbike":{"Petrol":0.091568,"No Fossil Fuel":0},
-         "Car":{"Petrol":0.134603,"Diesel":0.138526,"No Fossil Fuel":0},
+         "Car":{"Hybrid":0.10567,"Petrol":0.134603,"Diesel":0.138526,"No Fossil Fuel":0}, #hybrid from UK method
          "LDV":{"Petrol":0.150778,"Diesel":0.177546,"No Fossil Fuel":0},
          "HDV":{"Petrol":0.572078,"Diesel":1.113401,"No Fossil Fuel":0},
          "Bus":{"Diesel":0.831166,"CNG":0.987486,"No Fossil Fuel":0},
          "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
-         "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},
-         "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0}}
+         "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},                     #ferries from UK method
+         "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0}}                                #planes from UK method
 
 #+++++++++++++++++++++++
 
