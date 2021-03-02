@@ -192,15 +192,27 @@ class AddRecord(FlaskForm):
 
   submit = SubmitField("Submit")
 
-##Emissions factor per transport in kg per passemger km
+##Emissions factor per transport in kg per passenger km
 ##++++++++++++++++++++++
-##CO2 equivalent factors:
-# https://www.hbefa.net/e/index.html
-# https://www.hbefa.net/Tools/EN/MainSite.asp
-# https://www.hbefa.net/e/help/HBEFA41_help_en.pdf
-# https://climatechangeconnection.org/emissions/co2-equivalents/
-# https://climatechangeconnection.org/wp-content/uploads/2014/08/GWP_AR4.pdf
 
+#CO2 equivalents contain CO2, CH4 and N2O, i.e. the relevant greenhouse gases from the transport sector,
+#multiplied with their respective 100-year Global Warming Potentials and summed up.
+
+##Sources
+#HBEFA: https://www.hbefa.net/e/index.html and https://www.hbefa.net/e/help/HBEFA41_help_en.pdf
+#CO2 equivalents: https://climatechangeconnection.org/emissions/co2-equivalents/
+#Detailed HBEFA factors used by the Norwegian "Vegvesenet" (table 2.4-2.6):
+#https://vegvesen.brage.unit.no/vegvesen-xmlui/bitstream/handle/11250/2682775/
+#N%c3%a6ringstrafikk%20og%20tilh%c3%b8rende%20utslipp%20og%20milj%c3%b8konsekvenser%20.pdf?sequence=1&isAllowed=y
+
+#CO2-equivalent conversion multipliers for GHG emissions:
+CO2 = 1  # carbon dioxide
+CH4 = 25  # Methane
+N02 = 298  # nitrogen-dioxide
+
+#Need more info on CH2 and NO2 from HBEFA to execute CO2e calculations
+
+#CO2 factors:
 efco2 = {"Walk":{"No Fossil Fuel":0},
          "Bicycle":{"No Fossil Fuel":0},
          "Scooter":{"No Fossil Fuel":0},
@@ -212,6 +224,9 @@ efco2 = {"Walk":{"No Fossil Fuel":0},
          "Coach":{"Diesel":0.719972,"No Fossil Fuel":0},
          "Ferry":{"Diesel":0.11131,"HFO":0.1131,"No Fossil Fuel":0},                     #ferries from UK method
          "Plane":{"Jet Fuel":0.24298,"No Fossil Fuel":0}}                                #planes from UK method
+
+# HC factors:
+
 
 #+++++++++++++++++++++++
 
