@@ -194,6 +194,13 @@ class AddRecord(FlaskForm):
 
 ##Emissions factor per transport in kg per passemger km
 ##++++++++++++++++++++++
+##CO2 equivalent factors:
+# https://www.hbefa.net/e/index.html
+# https://www.hbefa.net/Tools/EN/MainSite.asp
+# https://www.hbefa.net/e/help/HBEFA41_help_en.pdf
+# https://climatechangeconnection.org/emissions/co2-equivalents/
+# https://climatechangeconnection.org/wp-content/uploads/2014/08/GWP_AR4.pdf
+
 efco2 = {"Walk":{"No Fossil Fuel":0},
          "Bicycle":{"No Fossil Fuel":0},
          "Scooter":{"No Fossil Fuel":0},
